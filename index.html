@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Words Generator | Akin Holo</title>
+
+   <link rel="icon" type="image/x-icon" href="https://github.com/akin-holo/image-preview/blob/main/logo.png?raw=true">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+      <h1>Word/Sentence/Paragraph Generator</h1>
+   </header>
+   <main>
+      <section class="selection-area">
+         <div class="wrapper">
+            <p>Write</p>
+            <form>
+               <input type="number" placeholder="number of writing">
+               <select>
+                  <option value="" disabled selected>Choose writing style</option>
+                  <option value="word">word</option>
+                  <option value="sentence">sentence</option>
+                  <option value="Paragraph">paragraph</option>
+               </select>
+            </form>
+            <p>for me</p>
+         </div>
+
+         <button id="generate" onclick="generateContent()">generate</button>
+      </section>
+      
+      <section class="display">
+         <p class="para"></p>
+      </section>
+   </main>
+
+   <script src="script.js"></script>
+</body>
+</html>
