@@ -59,3 +59,15 @@ button {
 button:active {
    background-color: #00000090;
 }
+
+aside {
+   text-align: justify;
+   margin: 2rem;
+   background-color: #fff;
+   border-radius: 5px;
+   font-weight: 400;
+   font-size: 1.2em;
+}
+aside p {
+   margin: 1em;
+}

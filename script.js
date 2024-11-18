@@ -1,25 +1,33 @@
 
 document.getElementById("generate").addEventListener("click", () => {
-   const quatity = parseInt(document.getElementById("number").value);
+   const quantity = parseInt(document.getElementById("number").value);
    const writingStyle = document.getElementById("writingStyle").value;
-   const output = document.querySelector("text-content");
+   const output = document.querySelector(".text-content");
 
-   if(!quatity || !writingStyle) {
+   if(!quantity || !writingStyle) {
       output.textContent = "Please provide valid input";
+      output.style.color = "red";
+      output.style.width = "40%";
+      output.style.fontSize = "12px";
       return;
    }
+
+   if (quantity < 1 || quantity > 10) {
+      output.textContent = "Please provide a number between 1 and 10.";
+      return;
+  }
 
    let result = '';
    switch (writingStyle) {
       case 'word':
-         result = generateWord(quatity);
+         result = generateWord(quantity);
          // document.querySelector("h1 .word").style.color = "#000"
          break;
       case 'sentence':
-         result = generateSentence(quatity);
+         result = generateSentence(quantity);
          break;
       case 'paragraph': 
-         result = generateParagraph(quatity);
+         result = generateParagraph(quantity);
          break;
       default:
          result = "invalid writing style";
@@ -28,26 +36,26 @@ document.getElementById("generate").addEventListener("click", () => {
    output.textContent = result;
 });
 
-function generateSentence(number) {
-   const word = ["There", "more", "couples", "of", "sentences", "Witness", "the", "greatness", "veil", "is", "removed", "this", "Keep", "pushing", "on", "It", "was", "never", "going", "to", "be", "easy", "Aluta", "continua", "more", "like", "You", "can", "get", "same"];
+function generateWord(number) {
+   const word = ["There.", "More.", "Couples.", "of.", "Sentences.", "Witness.", "the.", "greatness.", "veil", "is.", "removed.", "This.", "Keep.", "pushing.", "on.", "It.", "was.", "never.", "going.", "to.", "be.", "easy.", "Aluta.", "continua.", "more.", "like.", "You.", "can.", "get.", "same."];
    let output = [];
    for (let i = 0; i < number; i++) {
       output.push(word[Math.floor(Math.random() * word.length)]);
    }  
 
    return output.join(' ');
-}
+};
 
 
 function generateSentence(number) {
-   const sentence = ["There are more couples of sentences", "Witness the greatness", "The veil is removed this", "Keep pushing", "Keep on", "It was never going to be easy", "Aluta continua", "There is more like it", "You can get more of the same"];
+   const sentence = ["There are more couples of sentences.", "Witness the greatness.", "The veil is removed this.", "Keep pushing.", "Keep on.", "It was never going to be easy.", "Aluta continua.", "There is more like it.", "You can get more of the same."];
    let output = [];
    for (let i = 0; i < number; i++) {
       output.push(sentence[Math.floor(Math.random() * sentence.length)]);
    }  
 
    return output.join(' ');
-}
+};
 
 function generateParagraph(number) {
    let output = [];
