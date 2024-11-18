@@ -21,10 +21,11 @@ document.getElementById("generate").addEventListener("click", () => {
    switch (writingStyle) {
       case 'word':
          result = generateWord(quantity);
-         // document.querySelector("h1 .word").style.color = "#000"
+         document.querySelector(".text-content").style.color = "#D1495B";
          break;
       case 'sentence':
          result = generateSentence(quantity);
+         document.querySelector(".text-content").style.color = "#219EBC";
          break;
       case 'paragraph': 
          result = generateParagraph(quantity);
