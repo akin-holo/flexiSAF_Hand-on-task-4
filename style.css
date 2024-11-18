@@ -6,6 +6,15 @@ body {
 h1 {
    text-align: center;
 }
+h1 .word {
+   color: #ff0000;
+}
+h1 .sentence {
+   color: #0000ff;
+}
+h1 .paragraph {
+   color: #800080;
+}
 
 main {
    margin: 2rem;
@@ -43,6 +52,7 @@ button {
    text-transform: capitalize;
    margin-right: 2em;
    background-color: #000;
+   border: none;
    border-radius: 10px;
    font-weight: bold;
 }
